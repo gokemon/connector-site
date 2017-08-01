@@ -4,6 +4,25 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.2.
 
 
+----------
+
+git checkout -b BranchName
+
+git add -A
+
+git commit -m "comment"
+
+git push
+
+git checkout master
+
+git pull
+
+git merge BranchName
+
+git push
+
+----------
 
 ## Development server
 

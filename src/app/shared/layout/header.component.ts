@@ -4,11 +4,10 @@ import { Component } from '@angular/core';
 
 /* TypeDecorator */
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'layout-header',
+  templateUrl: './header.component.html'
 })
 /* Export class */
-export class AppComponent {
-  title = 'Connector is running!';
+export class HeaderComponent {
+  constructor() {}
 }

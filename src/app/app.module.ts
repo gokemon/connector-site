@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 /* imports Angular "core" library modules above and my stuff below */
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
+import { AuthModule } from './auth/auth.module';
 import { SharedModule, HeaderComponent, FooterComponent } from './shared';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
@@ -22,9 +23,12 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
     FormsModule,
     HttpModule,
     HomeModule,
-    rootRouting
+    AuthModule,
+    rootRouting // routing goes last
   ],  // end imports
-  providers: [],
+  providers: [
+      // providers listed here
+  ],  // end providers
   bootstrap: [AppComponent]
 })
 /* Export class */

@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 /* imports Angular "core" library modules above and my stuff below */
+import { ListErrorsComponent } from './list-errors.component';
 
 /* TypeDecorator */
 @NgModule({
@@ -16,12 +17,14 @@ import { RouterModule } from '@angular/router';
   ],  // end imports
   declarations: [
       // stub code here
+      ListErrorsComponent
   ],  // end declarations
   exports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    ListErrorsComponent,
     RouterModule
   ]  // end exports
 })

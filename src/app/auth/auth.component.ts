@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 /* imports Angular "core" library modules above and my stuff below */
+import { Errors, UserService } from '../shared';
 
 
 /* TypeDecorator */
@@ -13,11 +14,15 @@ import { ActivatedRoute } from '@angular/router';
 export class AuthComponent implements OnInit {
   authType: String = '';
   title: String = '';
+  // pulling errors from userService
+  errors: Errors = new Errors();
   isSubmitting: boolean = false;
   authForm: FormGroup;
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
+    private userService: UserService,
     private fb: FormBuilder
   ) {
     // use FormBuilder to create a form group
@@ -43,9 +48,18 @@ export class AuthComponent implements OnInit {
 
   submitForm() {
     this.isSubmitting = true;
+    this.errors = new Errors();
 
     let credentials = this.authForm.value;
     // check out what you get!
     console.log(credentials);
+    this.userService.attemptAuth(this.authType, credentials)
+        .subscribe(
+          data => this.router.navigateByUrl('/'),
+          err => {
+            this.errors = err;
+            this.isSubmitting = false;
+          }
+        );
   } // submitForm
 } // Export class

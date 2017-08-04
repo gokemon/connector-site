@@ -1,6 +1,6 @@
 {
     "name": "connector-site",
-    "version": "1.0.2",
+    "version": "1.0.4",
     "author": "Michael Gokey <Michael.of.Gokey@gmail.com> (http://portfolio.gokemon.xyz/)",
     "description": "Connector is a reverse-engineered clone of the social blogging site Medium.com",
     "license": "MIT",
